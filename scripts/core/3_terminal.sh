@@ -1,35 +1,53 @@
 #!/bin/bash
 
-Install stow
-Install neovim
-Install font for neovim
-Install tmux
-Install bluetoothctl
-Install brightnessctl
-Install btop
-Install fastfetch
-Install alacritty
-Install zsh and ohmyzsh
-Install ripgrep
-Install fd
-Install du-dust
-Install tldr
-Install zoxide
-Install fd
+# 1. Install stow
+# 2. Install ghostty
+# 3.1 Install neovim
+# 3.2 Install fonts for neovim
+# 4. Install tmux
+# 5. Install bluetoothctl, brightnessctl
+# 6. Install btop
+# 7. Install fastfetch
+# 8. Install zsh
+# 9. Install ripgrep fd du-dust tldr zoxide lf
+# 10 Stow
 
-Stow alacritty
-Stow fastfetch
-Stow tmux
+# Find a plugin in TMUX that saves state, so it's faster to run
+# eval "$(zoxide init zsh)"
 
-	
-# 1. Update the system
-# 2. makepkg the paru from AUR, for better safety
 
-# 1. Update the system
-sudo pacman -Syu --noconfirm git base-devel
+# 1. Install stow
+sudo pacman -S --needed stow
 
-# 2. makepkg the paru from AUR, for better safety
-git clone https://aur.archlinux.org/paru.git ~/paru
-cd ~/paru
-makepkg -si --noconfirm
-cd ..
+# 2. Install ghostty
+sudo pacman -S --needed ghostty
+
+# 3.1 Install neovim
+sudo pacman -S --needed neovim
+
+# 3.1 Install fonts for neovim
+sudo pacman -S --needed ttf-iosevka-nerd
+
+# 4. Install tmux
+sudo pacman -S --needed tmux
+
+# 5. Install bluetoothctl, brightnessctl
+sudo pacman -S --needed bluetoothctl brightnessctl
+
+# 6. Install btop
+sudo pacman -S --needed btop
+
+# 7. Install fastfetch
+sudo pacman -S --needed fastfetch
+
+# 8. Install zsh
+sudo pacman -S --needed zsh
+
+# 9. Install ripgrep fd du-dust tldr zoxide lf
+sudo pacman -S --needed ripgrep fd du-dust tldr zoxide lf
+
+# stow ghostty
+# stow neovim
+# stow tmux
+# stow fastfetch
+# stow zsh and oh-my-zsh
