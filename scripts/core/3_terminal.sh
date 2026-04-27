@@ -15,7 +15,6 @@
 # Find a plugin in TMUX that saves state, so it's faster to run
 # eval "$(zoxide init zsh)"
 
-
 # 1. Install stow
 sudo pacman -S --needed stow
 
@@ -50,8 +49,12 @@ sudo pacman -S --needed ripgrep fd tldr zoxide lf
 # stow neovim
 cd $HOME/dotfiles/files
 [ -e "$HOME/.config/nvim" ] && rm -rf "$HOME/.config/nvim"
-stow -t ~ nvim 
+stow -t ~ nvim
 
 # stow tmux
+cd $HOME/dotfiles/files
+[ -e "$HOME/.config/tmux" ] && rm -rf "$HOME/.config/tmux"
+stow -t ~ tmux
+
 # stow fastfetch
 # stow zsh and oh-my-zsh

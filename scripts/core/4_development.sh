@@ -12,7 +12,6 @@
 # 10. Stow
 # 11. Docker setup
 
-
 # 1. Install stow
 sudo pacman -S --needed stow
 
@@ -32,7 +31,7 @@ sudo pacman -S --needed tmux
 yay -S --needed visual-studio-code-bin
 
 # 6. Install python3, java, c++, nodejs
-sudo pacman -S --needed python jdk-openjdk gcc nodejs
+sudo pacman -S --needed python jdk-openjdk gcc nodejs npm
 
 # 7. Install docker
 sudo pacman -S --needed docker
@@ -44,7 +43,7 @@ sudo pacman -S --needed curl httpie
 # stow neovim
 cd $HOME/dotfiles/files
 [ -e "$HOME/.config/nvim" ] && rm -rf "$HOME/.config/nvim"
-stow -t ~ nvim 
+stow -t ~ nvim
 
 # stow tmux
 # stow fastfetch
