@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 1. Install stow
-# 2. Install ghostty
+# 2. Install alacritty
 # 3.1 Install neovim
 # 3.2 Install fonts for neovim
 # 4. Install tmux
@@ -16,8 +16,8 @@
 # 1. Install stow
 sudo pacman -S --needed stow
 
-# 2. Install ghostty
-sudo pacman -S --needed ghostty
+# 2. Install alacritty
+sudo pacman -S --needed alacritty
 
 # 3.1 Install neovim
 sudo pacman -S --needed neovim
@@ -40,14 +40,19 @@ sudo pacman -S --needed docker
 # 9. Install curl, httpie
 sudo pacman -S --needed curl httpie
 
-# stow ghostty
+# stow alacritty
 # stow neovim
+cd $HOME/dotfiles/files
+[ -e "$HOME/.config/nvim" ] && rm -rf "$HOME/.config/nvim"
+stow -t ~ nvim 
+
 # stow tmux
 # stow fastfetch
 # stow zsh and oh-my-zsh
 
 # Setup Docker, create groups and pull images
 sudo systemctl start docker
+sudo docker login
 sudo docker pull postgresql:alpine
 sudo usermod -aG docker $USER
 newgrp docker

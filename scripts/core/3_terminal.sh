@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 1. Install stow
-# 2. Install ghostty
+# 2. Install alacritty
 # 3.1 Install neovim
 # 3.2 Install fonts for neovim
 # 4. Install tmux
@@ -9,7 +9,7 @@
 # 6. Install btop
 # 7. Install fastfetch
 # 8. Install zsh
-# 9. Install ripgrep fd du-dust tldr zoxide lf
+# 9. Install ripgrep fd tldr zoxide lf
 # 10 Stow
 
 # Find a plugin in TMUX that saves state, so it's faster to run
@@ -19,8 +19,8 @@
 # 1. Install stow
 sudo pacman -S --needed stow
 
-# 2. Install ghostty
-sudo pacman -S --needed ghostty
+# 2. Install alacritty
+sudo pacman -S --needed alacritty
 
 # 3.1 Install neovim
 sudo pacman -S --needed neovim
@@ -43,11 +43,15 @@ sudo pacman -S --needed fastfetch
 # 8. Install zsh
 sudo pacman -S --needed zsh
 
-# 9. Install ripgrep fd du-dust tldr zoxide lf
-sudo pacman -S --needed ripgrep fd du-dust tldr zoxide lf
+# 9. Install ripgrep fd tldr zoxide lf
+sudo pacman -S --needed ripgrep fd tldr zoxide lf
 
-# stow ghostty
+# stow alacritty
 # stow neovim
+cd $HOME/dotfiles/files
+[ -e "$HOME/.config/nvim" ] && rm -rf "$HOME/.config/nvim"
+stow -t ~ nvim 
+
 # stow tmux
 # stow fastfetch
 # stow zsh and oh-my-zsh

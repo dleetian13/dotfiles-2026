@@ -2,7 +2,7 @@
 
 # 1. Install stow
 # 2.1. Install hyprland
-# 2.2. Install ghostty
+# 2.2. Install alacritty
 # 2.3. Install XDG Desktop Portal. The portal is crucial for handling desktop functionalities such as file dialogs and screensharing.
 # 2.4. Install Polkit KDE Agent. Polkit manages system-wide privileges, install KDE for better compatibility.
 # 2.5. Install QT  Wayland Support. These are necessary QT applicatiosn to function in wayland.
@@ -12,8 +12,9 @@
 # 6. Install rofi
 # 7. Install waybar
 # 8. Install dunst
-# 9. Setup for Clipboard
-# 10. Stow
+# 9. Install ly and enable ly
+# 10. Setup for Clipboard
+# 11. Stow
 
 # Always echo the title with style, and then the description, add color for description. Blue for title, white blue for subtitle
 # Checklist: Add the waybar, rofi, dunst in the hypr config
@@ -27,8 +28,8 @@ sudo pacman -S --needed stow
 # 2.1. Install Hyprland
 sudo pacman -S --needed hyprland
 
-# 2.2. Install ghostty
-sudo pacman -S --needed ghostty
+# 2.2. Install alacritty
+sudo pacman -S --needed alacritty
 
 # 2.3. Install XDG Desktop Portal
 sudo pacman -S --needed xdg-desktop-portal-hyprland
@@ -57,8 +58,21 @@ sudo pacman -S --needed waybar
 # 8. Install Dunst
 sudo pacman -S --needed dunst
 
+# 9. Install ly and enable ly
+sudo pacman -S --needed ly
+sudo systemctl enable ly@tty1.service
+sudo systemctl start ly@tty1.service
+
+# 10. Setup for Clipboard
+sudo pacman -S --needed wl-clipboard cliphist
+
 # Stow hyprland, hyprpaper, hypridle
-# Stow ghostty
+cd $HOME/dotfiles/files
+[ -e "$HOME/.config/hypr" ] && rm -rf "$HOME/.config/hypr"
+stow -t ~ hypr
+# [ -e "$HOME/.config/hypr" ] && mv "$HOME/.config/hypr" "$HOME/.config/hypr-backup"
+
+# Stow alacritty
 # Stow waybar
 # Stow rofi
 # Stow dunst
