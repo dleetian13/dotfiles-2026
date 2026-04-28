@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 1. Install stow
-# 2. Install alacritty
+# 2. Install alacritty ghostty
 # 3.1 Install neovim
 # 3.2 Install fonts for neovim
 # 4. Install tmux
@@ -16,7 +16,7 @@
 sudo pacman -S --needed stow
 
 # 2. Install alacritty
-sudo pacman -S --needed alacritty
+sudo pacman -S --needed alacritty ghostty
 
 # 3.1 Install neovim
 sudo pacman -S --needed neovim

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 1. Install stow
-# 2. Install alacritty
+# 2. Install alacritty and ghostty
 # 3.1 Install neovim
 # 3.2 Install fonts for neovim
 # 4. Install tmux
@@ -18,8 +18,8 @@
 # 1. Install stow
 sudo pacman -S --needed stow
 
-# 2. Install alacritty
-sudo pacman -S --needed alacritty
+# 2. Install alacritty and ghostty
+sudo pacman -S --needed alacritty ghostty
 
 # 3.1 Install neovim
 sudo pacman -S --needed neovim
@@ -58,3 +58,12 @@ stow -t ~ tmux
 
 # stow fastfetch
 # stow zsh and oh-my-zsh
+cd $HOME/dotfiles/files
+[ -e "$HOME/.zsh" ] && rm -rf "$HOME/.zsh"
+[ -e "$HOME/.zshrc" ] && rm "$HOME/.zshrc"
+stow -t ~ zsh
+
+if [ "$SHELL" != "$(which zsh)" ]; then
+  echo "Switching default shell to Zsh..."
+  sudo chsh -s /usr/bin/zsh "$USER"
+fi

@@ -65,6 +65,8 @@ sudo systemctl start ly@tty1.service
 
 # 10. Setup for Clipboard
 sudo pacman -S --needed wl-clipboard cliphist
+yay -S --needed wl-copy slurp grim
+mkdir $HOME/Pictures
 
 # Stow hyprland, hyprpaper, hypridle
 cd $HOME/dotfiles/files
